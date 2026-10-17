@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163f35">
+  <meta name="description" content="A live photo vocabulary challenge. Eight places, 160 descriptive words, one Wordscape champion. Built for Year 9.">
+  <title>Wordscape Arena — Find the feeling</title>
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="connection" id="connection" role="status" hidden>Connecting to the arena…</div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Wordscape Arena home"><img src="/icon.svg" width="38" height="38" alt=""><span>wordscape<span class="brand-sub">ARENA</span></span></a>
+    <div class="top-actions"><span class="year-tag">YEAR 9 · THE VOCABULARY CHALLENGE</span><button class="icon-button" id="sound-button" title="Turn sound on" aria-label="Turn sound on" aria-pressed="false">♪</button><button class="text-button" id="help-button">How to play <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <main id="app">
+    <section class="loading-shell"><p class="eyebrow">WELCOME TO THE ARENA</p><h1>One photo.<br>Find the feeling.</h1><p>Preparing your expedition…</p></section>
+  </main>
+  <footer><span>Look closer. Choose precisely. Make a place come alive.</span><button class="text-button" id="credits-button">Photo credits ↗</button></footer>
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite"></div>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-top"><span class="eyebrow">THE FIELD GUIDE</span><button class="icon-button" data-close="help-dialog" aria-label="Close instructions">×</button></div>
+    <h2 id="help-title">See a place.<br>Find its words.</h2>
+    <div class="rule-list">
+      <p><b>01 · Enter the arena</b><span>The host creates a room. Players enter the same five-character code on their own devices. You can also practise solo.</span></p>
+      <p><b>02 · Race the clock</b><span>Each of the eight photos has 20 target descriptors. You have 90 seconds. Type one word or compound adjective at a time, then press Enter.</span></p>
+      <p><b>03 · Choose precisely</b><span>Targets are ranked from 100 to 5 points by vocabulary challenge. Each player can score every target once. Another player’s answer never takes your points.</span></p>
+      <p><b>04 · Follow the clues</b><span>Meaning clues appear at 30 seconds; first letters at 55; second letters at 75. Your unsolved words get the hints. Points stay the same.</span></p>
+      <p><b>05 · Read the mood</b><span>After each round, review the scoreboard, all 20 answers, their meanings and possible connotations. The host starts the next photo. Highest total after round eight wins; equal scores share a place.</span></p>
+    </div>
+    <div class="note">These are curated targets, not the only valid descriptions. Connotations change with context. The points reward vocabulary challenge, not a word’s universal “quality”. British and American spellings are accepted where listed.</div>
+    <button class="button primary full" data-close="help-dialog">Let’s find some words <span aria-hidden="true">→</span></button>
+  </dialog>
+  <dialog id="credits-dialog" aria-labelledby="credits-title"><div class="dialog-top"><span class="eyebrow">REAL PLACES. REAL PHOTOGRAPHS.</span><button class="icon-button" data-close="credits-dialog" aria-label="Close photo credits">×</button></div><h2 id="credits-title">Through their lens.</h2><div id="credits-content">Loading photo credits…</div><p class="small">Photos sourced from Unsplash and included locally. <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash License ↗</a></p></dialog>
+  <noscript>This game needs JavaScript. Enable it, then reload this page.</noscript>
+</body>
+</html>
